@@ -456,19 +456,6 @@ bool CIRCNetwork::ParseConfig(CConfig* pConfig, CString& sError,
             bool bModRet = LoadModule(sModName, sArgs, sNotice, sModRet);
 
             if (!bModRet) {
-                // Q is removed in znc 1.8
-                if (sModName == "q") {
-                    CUtils::PrintError(
-                        "NOTICE: [q] is unavailable, cannot load.");
-                    CUtils::PrintError(
-                        "NOTICE: [q] is removed in this release of ZNC. Please "
-                        "either remove it from your config or install it as a "
-                        "third party module with the same name.");
-                    CUtils::PrintError(
-                        "NOTICE: More info can be found on "
-                        "https://wiki.znc.in/Q");
-                    return false;
-                }
 
                 // Partyline is removed in znc 1.8
                 if (sModName == "partyline") {
